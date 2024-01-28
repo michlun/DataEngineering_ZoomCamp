@@ -1,2 +1,5 @@
-# DataEngineering_ZoomCamp_Terraform
-Terraform homework
+# DataEngineering_ZoomCamp_Module_1
+Homework Module 1:
+- SQL Queries
+- Terraform
+

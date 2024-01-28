@@ -1,0 +1,16 @@
+SELECT
+  zpu."Zone" AS "pickup_zone",
+  zdo."Zone" AS "dropoff_zone",
+  MAX(tip_amount) as "max_tip"
+FROM
+  green_taxi_data,
+  zones zpu,
+  zones zdo
+WHERE
+  "PULocationID" = zpu."LocationID" AND
+  "DOLocationID" = zdo."LocationID" AND
+  zpu."Zone" = 'Astoria'
+ GROUP BY
+  zpu."Zone", zdo."Zone"
+ORDER BY
+ max_tip DESC

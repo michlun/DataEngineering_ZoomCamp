@@ -1,0 +1,13 @@
+SELECT
+  CAST(lpep_pickup_datetime AS DATE) AS "pickup_day",
+  "Borough",
+  SUM(total_amount)
+FROM
+  green_taxi_data,
+  zones
+WHERE
+  "PULocationID" = "LocationID"
+GROUP BY
+  pickup_day, "Borough"
+ORDER BY
+ pickup_day

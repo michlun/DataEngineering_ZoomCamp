@@ -1,0 +1,12 @@
+SELECT
+  CAST(lpep_pickup_datetime AS DATE) AS "pickup_day",
+  CAST(lpep_dropoff_datetime AS DATE) AS "dropoff_day",
+  COUNT(1)
+FROM
+  green_taxi_data
+GROUP BY
+  CAST(lpep_pickup_datetime AS DATE),
+  CAST(lpep_dropoff_datetime AS DATE)
+ORDER BY
+  "pickup_day" ASC,
+  "dropoff_day" ASC;

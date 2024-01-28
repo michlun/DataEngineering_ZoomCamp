@@ -1,0 +1,10 @@
+SELECT
+  CAST(lpep_pickup_datetime AS DATE) AS "pickup_day",
+  COUNT(1),
+  MAX(trip_distance) as "max_distance"
+FROM
+  green_taxi_data
+GROUP BY
+  pickup_day
+ORDER BY
+  max_distance DESC
